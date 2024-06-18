@@ -455,11 +455,7 @@ if (wapresence === 'recording') {
 } else if (wapresence === 'typing') { 
 
   client.sendPresenceUpdate('composing', m.chat);
-    if (autoread === 'TRUE' && !m.isGroup) { 
-             client.readMessages([m.key])
-    }
-
-      if (itsMe && mek.key.id.startsWith("BAE5") && mek.key.id.length === 16 && cmd && !m.isGroup) return;
+}
 
     // Push Message To Console
     let argsLog = budy.length > 30 ? `${q.substring(0, 30)}...` : budy;
@@ -513,10 +509,7 @@ if (!m.key.fromMe) return
 			console.log(color(`Private Chat:`, 'green'))
             console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender))
         }
-    if (autoread === 'TRUE' && !m.isGroup) { 
-             client.readMessages([m.key])
-    }
-
+    
 async function getYoutubeInfo(url) {
     try {
         const info = await ytdl.getInfo(url);
